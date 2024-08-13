@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/signup.css') }}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}" />
+    <link rel="icon" type="image/png" sizes="512x512" href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}" />
+    <title>Forgot password - AlgoMAGIC</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="circle"></div>
+      <div class="circle2"></div>
+      <div class="left">
+        <div class="welcome">Let's Get Started.!</div>
+        <button class="skip">Welcome to AlgoMAGIC.!</button>
+      </div>
+      <div class="right">
+        <form action="{{ url_for('auth.signup') }}" method="POST">
+          <div class="login-form">
+            <div class="title">
+              <div class="login">Sign - Up</div>
+              <div class="text">Just some details to get you in.!</div>
+            </div>
+            <div style="display: flex">
+              <input
+                type="text"
+                placeholder="name"
+                class="name"
+                id="name"
+                name="name"
+                style="width: 50%; margin-right: 2.5%"
+                required
+              />
+              <div style="color:red">{{ errors.not_exists_error + '<a href="/signup">signup</a>' if errors else '' }}</div>
+              <input
+                type="text"
+                placeholder="surname"
+                class="name"
+                id="surname"
+                name="surname"
+                style="width: 50%; margin-left: 2.5%"
+                required
+              />
+              <div style="color:red">{{ errors.surname_error if errors else '' }}</div>
+            </div>
+            <input
+              type="email"
+              placeholder="Email"
+              class="email"
+              id="email"
+              name="email"
+              required
+            />
+            <div style="color:red">{{ errors.email_error if errors else '' }}</div>
+            <div style="color:red">{{ errors.exists_email_error if errors else '' }}</div>
+            <input
+              type="password"
+              placeholder="Password"
+              class="password"
+              id="password"
+              name="password"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              class="confirm-password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
+            <div style="color:red">{{ errors.password_error if errors else '' }}</div>
+            <button class="login-btn" id="login-btn">Get OTP</button>
+            <div style="display: flex">
+              <div style="width: 50%">
+                <hr style="display: inline-flex; width: 100%; opacity: 0.5" />
+              </div>
+              <div class="or" style="padding: 0px 10px">Or</div>
+              <div style="width: 50%">
+                <hr style="display: inline-flex; width: 100%; opacity: 0.5" />
+              </div>
+            </div>
+            <div class="social-buttons"></div>
+            <div class="signup">Already Registered? <a href="/login" role="link" aria-label="#">Login</a></div>
+
+            <div class="footer">
+              <div class="terms">Terms & Conditions</div>
+              <div class="support">Support</div>
+              <div class="care">Customer Care</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

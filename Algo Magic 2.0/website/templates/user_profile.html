@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/user_profile.css') }}" />
+    <title>User Profile - AlgoMAGIC</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="{{ url_for('static', filename='assets/images/profile-picture.jpg') }}" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1>{{user.first_name}}</h1>
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
+        <div class="profile-body">
+            <div class="profile-section">
+                <h2>About Me</h2>
+                <p>{{ password }}</p>
+            </div>
+            <div class="profile-section">
+                <h2>Skills</h2>
+                <ul>
+                </ul>
+            </div>
+            <div class="profile-section">
+                <h2>Experience</h2>
+                <ul>
+
+                </ul>
+            </div>
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </div>
+    </div>
+</body>
+
+</html>

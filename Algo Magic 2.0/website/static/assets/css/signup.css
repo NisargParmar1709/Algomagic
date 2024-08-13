@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.skip {
+    background-color: #000;
+    color: #fff;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.skip:hover {
+    background-color: #121212;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.login-form {
+    background-color: #0e0e0e;
+    /* Semi-transparent white background */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white border */
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect to the background */
+    animation: slideInRight 1s ease-in-out;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.name,
+.email,
+.password,
+.confirm-password {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background-color: #121212;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.username:focus,
+.email:focus,
+.password:focus,
+.confirm-password:focus {
+    outline: none;
+    border-color: #3a72ff;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.error {
+    border-color: red;
+}
+
+.login-btn {
+    background: linear-gradient(to right, #3a72ff, #001797);
+    color: #fff;
+    padding: 14px 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to right, #001797, #3a72ff);
+}
+
+.or {
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.social-buttons {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.social-buttons button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+.social-buttons img {
+    width: 24px;
+    height: 24px;
+}
+
+.signup {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.terms,
+.support,
+.care {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.terms:hover,
+.support:hover,
+.care:hover {
+    color: #3a72ff;
+}
+
+.circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #153380, #0400ff);
+    opacity: 0.2;
+    top: 5px;
+    left: -50px;
+    animation: moveCircle 10s linear infinite;
+}
+
+.circle2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #1c2d57, #2112a8);
+    opacity: 0.2;
+    bottom: 100px;
+    right: -100px;
+    animation: moveCircle2 15s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+        /* Add padding for mobile */
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .welcome {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .skip {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .social-buttons {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .social-buttons button {
+        margin: 0 5px;
+        /* Add space between social buttons */
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        /* Align items to the left */
+        margin-top: 20px;
+    }
+
+    .footer div {
+        margin-bottom: 10px;
+        /* Add space between footer elements */
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .circle2 {
+        display: none;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveCircle {
+    0% {
+        transform: translateX(-100px) translateY(100px);
+    }
+
+    50% {
+        transform: translateX(200px) translateY(-100px);
+    }
+
+    100% {
+        transform: translateX(-100px) translateY(100px);
+    }
+}
+
+@keyframes moveCircle2 {
+    0% {
+        transform: translateX(100px) translateY(-100px);
+    }
+
+    50% {
+        transform: translateX(-200px) translateY(100px);
+    }
+
+    100% {
+        transform: translateX(100px) translateY(-100px);
+    }
+}

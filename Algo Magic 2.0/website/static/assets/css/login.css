@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* Hide scrollbars */
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.skip {
+    background-color: #000;
+    color: #fff;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.skip:hover {
+    background-color: #333;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.login-form {
+    background-color: #0e0e0e;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 1.4s ease-in-out;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login {
+    font-size: 36px;
+    font-weight: 600;
+    animation: fadeInUp 1.6s ease-in-out;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+    animation: fadeInUp 1.8s ease-in-out;
+}
+
+.username,
+.password {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background-color: #121212;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.username:focus,
+.password:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 2.2s ease-in-out;
+}
+
+#remember {
+    margin-right: 5px;
+}
+
+.login-btn {
+    background: linear-gradient(to right, #618dff, #8640cd);
+    color: #fff;
+    padding: 14px 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    animation: fadeInUp 2.4s ease-in-out;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to right, #8640cd, #618dff);
+}
+
+.forgot {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeInUp 2.6s ease-in-out;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 2.8s ease-in-out;
+}
+
+.or-separator hr {
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+}
+
+.or-separator span {
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.social-buttons {
+    display: flex;
+    margin-bottom: 30px;
+    animation: fadeInUp 3s ease-in-out;
+}
+
+.social-buttons button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.social-buttons img {
+    width: 24px;
+    height: 24px;
+}
+
+.signup {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    animation: fadeInUp 3.2s ease-in-out;
+}
+
+.signup:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    animation: fadeInUp 3.4s ease-in-out;
+}
+
+.terms,
+.support,
+.care {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.terms:hover,
+.support:hover,
+.care:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #618dff, #8640cd);
+    opacity: 0.2;
+    top: 100px;
+    left: -100px;
+    animation: circleAnimation 10s linear infinite;
+}
+
+.circle2 {
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #618dff, #8640cd);
+    opacity: 0.2;
+    bottom: 100px;
+    right: -100px;
+    animation: circleAnimation 15s linear infinite reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .welcome {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .skip {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .social-buttons button {
+        margin-bottom: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .footer div {
+        margin-bottom: 10px;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .circle2 {
+        display: none;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes circleAnimation {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+
+    50% {
+        transform: translateX(100px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}

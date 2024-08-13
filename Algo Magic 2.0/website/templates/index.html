@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta
+      name="description"
+      content="AlgoMagic allows you to customize your YouTube feed based on your preferences."
+    />
+    <!-- SPEED -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- LINK -->
+    <link rel="me" href="#" />
+    <link rel="canonical" href="#" />
+    <link rel="icon" type="image/png" href="#" sizes="48x48" />
+    <!-- PERFORMANCE -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <link rel="preload" as="style" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- TITLE -->
+    <title>AlgoMagic: Customize Your YouTube Feed</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}"
+    />
+    <style>
+      :root {
+        --primary-color: #fec302;
+        --secondary-color: #302b63;
+        --background-color: #f5f5f5;
+        --text-color: #333;
+      }
+
+      .circle {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        /* Updated gradient with pink */
+        background: linear-gradient(to right, #ff69b4, #ff99cc);
+        /* Pink gradient */
+        opacity: 0.6;
+        top: 100px;
+        left: -100px;
+      }
+
+      .circle2 {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        /* Updated gradient with pink */
+        background: linear-gradient(to left, #c5156d, #ff69b4);
+        /* Pink gradient */
+        opacity: 0.6;
+        bottom: 90px;
+        right: -0%;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+      }
+
+      .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .background::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .landing-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: var(--text-color);
+      }
+
+      header {
+        background-color: var(--secondary-color);
+        padding: 1em;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .ui-section-header--logo svg {
+        width: 58px;
+        height: 58px;
+        fill: var(--primary-color);
+      }
+
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0 10px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #fec302;
+        text-decoration: underline;
+        transition: color 0.5s ease;
+      }
+
+      .ui-section-hero {
+        padding: 50px 20px;
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+      }
+
+      .ui-component-button-primary {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .ui-component-button-primary:hover {
+        background-color: #83650a;
+      }
+
+      .ui-text-note small {
+        color: #ddd;
+      }
+
+      footer {
+        background-color: var(--secondary-color);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      footer p,
+      footer a {
+        color: #aeaeae;
+      }
+
+      body {
+        background: linear-gradient(135deg, #0f172a, #302b63);
+        background-size: cover;
+        background-position: center;
+        /* font-family: 'Inter', sans-serif; */
+        margin: 0;
+        padding: 0;
+      }
+
+      .landing-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: white;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.5);
+        /* Optional: to make the header stand out */
+        padding: 1em;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .ui-section-header--logo svg {
+        width: 58px;
+        height: 58px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .ui-section-hero {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.5);
+        /* Optional: to make the hero section stand out */
+        border-radius: 10px;
+      }
+
+      .ui-component-button-primary {
+        background-color: #fec302;
+        color: #302b63;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .ui-component-button-primary:hover {
+        background-color: #83650a;
+      }
+
+      .ui-text-note small {
+        color: #ddd;
+      }
+
+      footer {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      footer p,
+      footer a {
+        color: #aeaeae;
+      }
+
+      @media (max-width: 768px) {
+        .circle {
+          display: none;
+        }
+
+        .circle2 {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background"></div>
+    <header role="banner" class="ui-section-header" style="height: 100%">
+      <div class="ui-layout-container">
+        <div class="ui-section-header__layout ui-layout-flex">
+          <!-- LOGO -->
+          <a
+            href="#"
+            role="link"
+            aria-label="#"
+            class="ui-section-header--logo"
+          >
+            <svg
+              version="1.1"
+              viewBox="0 0 2048 1365"
+              width="58"
+              height="58"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                transform="translate(0)"
+                d="m0 0h2048v1365h-2048z"
+                fill="#FEC302"
+              />
+              <path
+                transform="translate(831,400)"
+                d="m0 0h9l13 2 13 4 14 7 11 9 5 4 9 12 9 16 19 39 13 28 9 19 8 16 22 45 13 28 10 21 8 16 25 51 13 28 8 16 14 29 12 26 7 11 7 6 10 4h15l13-5 10-6h3l-2 6-8 16-11 23-26 52-9 12-11 11-10 7-17 8-20 4h-12l-20-4-16-7-14-10-10-10-9-14-21-43-12-26-8-16-18-37-11-23-17-35-12-25-14-29-11-23-16-33-14-29-13-28-8-16-9-17-9-8-9-4-5-1h-10l-11 4-12 8-3-1 2-7 10-19 10-21 25-50 9-12 11-11 11-7 10-5 13-4z"
+                fill="#83650A"
+              />
+              <path
+                transform="translate(1159,400)"
+                d="m0 0h10l16 3 15 6 11 7 13 11 9 12 12 23 16 33 11 23 16 33 12 26 8 16 20 41 11 23 13 27 11 23 17 35 14 29 12 26 8 16 6 11 5 6 9 5 5 2h16l12-5 9-6 4 1-9 19-8 16-12 25-18 36-8 11-8 9-11 8-16 8-12 4-13 2-18-1-16-4-16-8-13-10-7-7-10-15-33-68-24-51-8-16-19-39-11-23-14-29-11-23-14-29-17-35-12-26-8-16-9-19-7-9v-2l-4-2-11-5-5-1h-9l-12 4-11 7-4 1 1-5 30-60 11-23 7-13 8-10 9-9 10-7 15-7 15-4z"
+                fill="#83650A"
+              />
+              <path
+                transform="translate(646,716)"
+                d="m0 0h13l13 4 11 8 7 10 20 41 13 28 10 19 7 6 8 4 4 1h15l12-5 11-7h2l-1 6-12 23-14 29-8 17-10 19-9 14-4 5-8 7-11 8-12 6-18 5-9 1h-9l-13-2-16-5-14-8-11-9-9-10-8-13-17-35-10-22-2-8v-10l4-13 10-22 9-17 11-23 10-21 9-16 7-7 12-6z"
+                fill="#83650A"
+              />
+            </svg>
+          </a>
+          <!-- HAMBURGER -->
+          <input type="checkbox" id="ui-section-header--menu-id" />
+          <label
+            for="ui-section-header--menu-id"
+            class="ui-section-header--menu-icon"
+          ></label>
+          <!-- MENU -->
+          <nav role="navigation" class="ui-section-header--nav ui-layout-flex">
+            <a
+              href="#"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Home</a
+            >
+            <a
+              href="#features"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Features</a
+            >
+            {% if current_user.is_authenticated %}
+            <a
+              href="#preferences"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Preferences</a
+            >
+            {% else %} {% endif %}
+            <a
+              href="contact"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Contact</a
+            >
+            <a
+              href="about"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >About</a
+            >
+            {% if current_user.is_authenticated %}
+            <a style="border-left:1px solid white; margin-bottom: 1%" href="user_profile">
+              <img
+                src="../static/assets/images/jpg/profile_pic2.jpg"
+                alt="#"
+                height="50px"
+                width="50px"
+                style="border-radius:50%"
+              />
+              <p class="ui-section-testimonial--author">
+                <strong style="color: #fec302; font-size:20px">{{session['first_name']}} {{session['last_name']}}</strong><br />
+              </p>
+            </a>
+            {% else %} {% endif %}
+          </nav>
+        </div>
+      </div>
+      <!-- Animated Circles -->
+      <div class="animated-circles">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+      </div>
+    </header>
+    <main role="main">
+      <section class="ui-section-hero">
+        <div class="ui-layout-container">
+          <div class="ui-section-hero__layout ui-layout-grid ui-layout-grid-2">
+            <!-- COPYWRITING -->
+            <div>
+              <h1 style="color: #ddd">Customize Your YouTube Experience</h1>
+              <p class="ui-text-intro">
+                AlgoMagic lets you tailor your YouTube feed to match your
+                preferences and interests. Make your YouTube time more
+                productive and enjoyable.
+              </p>
+              <!-- CTA -->
+              <div class="ui-component-cta ui-layout-flex">
+                {% if current_user.is_authenticated %}
+                <a
+                  href="/preferences"
+                  role="link"
+                  aria-label="#"
+                  class="ui-component-button ui-component-button-normal ui-component-button-primary"
+                  >Get Started</a
+                >
+                {% else %}
+                <a
+                  href="signup"
+                  role="link"
+                  aria-label="#"
+                  class="ui-component-button ui-component-button-normal ui-component-button-primary"
+                  >Get Started</a
+                >
+                {% endif %}
+                <p class="ui-text-note">
+                  <small>Start customizing your feed now</small>
+                </p>
+              </div>
+            </div>
+            <!-- IMAGE -->
+            <img
+              src="../static/assets/images/jpg/main2.jpg"
+              loading="lazy"
+              alt="#"
+              class="ui-image-half-right"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="ui-section-customer" style="margin-top: 10%">
+        <div class="ui-layout-container">
+          <div class="ui-section-customer__layout ui-layout-flex">
+            <img
+              src="https://res.cloudinary.com/uisual/image/upload/assets/logos/facebook.svg"
+              alt="#"
+              class="ui-section-customer--logo"
+            />
+            <img
+              src="https://res.cloudinary.com/uisual/image/upload/assets/logos/pinterest.svg"
+              alt="#"
+              class="ui-section-customer--logo"
+            />
+            <img
+              src="https://res.cloudinary.com/uisual/image/upload/assets/logos/stripe.svg"
+              alt="#"
+              class="ui-section-customer--logo ui-section-customer--logo-str"
+            />
+            <img
+              src="https://res.cloudinary.com/uisual/image/upload/assets/logos/dribbble.svg"
+              alt="#"
+              class="ui-section-customer--logo"
+            />
+            <img
+              src="https://res.cloudinary.com/uisual/image/upload/assets/logos/behance.svg"
+              alt="#"
+              class="ui-section-customer--logo ui-section-customer--logo-bhn"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="ui-section-feature" id="features">
+        <div class="ui-layout-container">
+          <div
+            class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2"
+          >
+            <!-- IMAGE -->
+            <!-- https://res.cloudinary.com/uisual/image/upload/assets/devices/ipad.png -->
+            <img
+              src="../static/assets/images/jijf/feature1.jfif"
+              alt="#"
+              class="ui-image-half-left"
+              style="height: 70%; width: 110%"
+            />
+            <!-- FEATURE -->
+            <div>
+              <h2 style="color: #ddd">Key Features</h2>
+              <p class="ui-text-intro">
+                AlgoMagic offers a variety of features to help you control your
+                YouTube experience:
+              </p>
+              <ul
+                class="ui-component-list ui-component-list-feature ui-layout-grid"
+              >
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  Personalized content recommendations
+                </li>
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  Keyword-based filtering
+                </li>
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  Easy-to-use interface
+                </li>
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  Privacy-focused design
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="ui-section-feature__layout ui-layout-grid ui-layout-grid-2"
+          >
+            <!-- FEATURE -->
+            <div>
+              <h2 style="color: #ddd">More Features</h2>
+              <p class="ui-text-intro">
+                Explore more features designed to enhance your YouTube
+                experience:
+              </p>
+              <ul
+                class="ui-component-list ui-component-list-feature ui-layout-grid"
+              >
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  Customizable notifications
+                </li>
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  User-friendly setup
+                </li>
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  Regular updates
+                </li>
+                <li
+                  class="ui-component-list--item ui-component-list--item-check"
+                  style="color: #fec302"
+                >
+                  24/7 support
+                </li>
+              </ul>
+            </div>
+            <!-- IMAGE -->
+            <img
+              src="../static/assets/images/jijf/feature2.jfif"
+              alt="#"
+              class="ui-image-half-right"
+              class="ui-image-half-left"
+              style="height: 90%; width: 110%"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="ui-section-testimonial">
+        <div class="ui-layout-container">
+          <div
+            class="ui-section-testimonial__layout ui-layout-grid ui-layout-grid-2"
+          >
+            <div class="ui-layout-column-4">
+              <img
+                src="../static/assets/images/jpg/profile_pic2.jpg"
+                alt="#"
+                class="ui-section-testimonial--avatar"
+              />
+              <p class="ui-section-testimonial--quote ui-text-intro">
+                &ldquo;AlgoMagic transformed how I use YouTube. Now I only see
+                content that matters to me!&rdquo;
+              </p>
+              <p class="ui-section-testimonial--author">
+                <strong style="color: #ddd">Jane Doe</strong><br /><small
+                  class="ui-text-note"
+                  >Tech Enthusiast</small
+                >
+              </p>
+            </div>
+            <div class="ui-layout-column-4">
+              <img
+                src="../static/assets/images/jpg/profile_pic1.jpg"
+                alt="#"
+                class="ui-section-testimonial--avatar"
+              />
+              <p class="ui-section-testimonial--quote ui-text-intro">
+                &ldquo;A game-changer for my productivity. Highly
+                recommend!&rdquo;
+              </p>
+              <p class="ui-section-testimonial--author">
+                <strong style="color: #ddd">John Smith</strong><br /><small
+                  class="ui-text-note"
+                  >Software Developer</small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ui-section-close">
+        <div class="ui-layout-container">
+          <div class="ui-layout-column-6 ui-layout-column-center">
+            <h2>Ready to start?</h2>
+            <p class="ui-text-intro">
+              Let's make your YouTube time more productive and enjoyable.
+            </p>
+            <!-- CTA -->
+            <div class="ui-component-cta ui-layout-flex">
+              {% if current_user.is_authenticated %}
+              <a
+                href="/preferences"
+                role="link"
+                aria-label="#"
+                class="ui-component-button ui-component-button-normal ui-component-button-primary"
+                >Get Started</a
+              >
+              {% else %}
+              <a
+                href="/signup"
+                role="link"
+                aria-label="#"
+                class="ui-component-button ui-component-button-normal ui-component-button-primary"
+                >Get Started</a
+              >
+              {% endif %}
+              <p class="ui-text-note">
+                <small style="color: #302b63"
+                  >Start customizing your feed now</small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer role="contentinfo" class="ui-section-footer">
+      <div class="ui-layout-container">
+        <div class="ui-section-footer__layout ui-layout-flex">
+          <!-- COPYRIGHT -->
+          <p class="ui-section-footer--copyright ui-text-note">
+            <small>&copy; 2024 AlgoMagic</small>
+          </p>
+          <!-- MENU -->
+          <a href="#" role="link" aria-label="#">
+            <svg
+              viewBox="0 0 24 24"
+              height="16"
+              width="16"
+              fill="none"
+              stroke="#AEAEAE"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              role="img"
+              aria-label="#"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+              />
+            </svg>
+          </a>
+          <a href="#" role="link" aria-label="#">
+            <svg
+              viewBox="0 0 24 24"
+              height="16"
+              width="16"
+              fill="none"
+              stroke="#AEAEAE"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              role="img"
+              aria-label="#"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path
+                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"
+              />
+            </svg>
+          </a>
+          <a href="#" role="link" aria-label="#">
+            <svg
+              viewBox="0 0 24 24"
+              height="16"
+              width="16"
+              fill="none"
+              stroke="#AEAEAE"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              role="img"
+              aria-label="#"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path
+                d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.58-8.66 4.93"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <style>
+    </style>
+  </body>
+</html>

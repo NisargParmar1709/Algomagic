@@ -1,0 +1,366 @@
+<style>
+        :root {
+        --primary-color: #fec302;
+        --secondary-color: #302b63;
+      }
+
+      .circle {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        /* Updated gradient with pink */
+        background: linear-gradient(to right, #ff69b4, #ff99cc);
+        /* Pink gradient */
+        opacity: 0.6;
+        top: 100px;
+        left: -100px;
+      }
+
+      .circle2 {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        /* Updated gradient with pink */
+        background: linear-gradient(to left, #c5156d, #ff69b4);
+        /* Pink gradient */
+        opacity: 0.6;
+        bottom: 90px;
+        right: -0%;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+      }
+
+      .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .background::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0)
+        );
+        animation: rotate 20s linear infinite;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .landing-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: var(--text-color);
+      }
+
+      header {
+        background-color: var(--secondary-color);
+        padding: 1em;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .ui-section-header--logo svg {
+        width: 58px;
+        height: 58px;
+        fill: var(--primary-color);
+      }
+
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0 10px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #fec302;
+        text-decoration: underline;
+        transition: color 0.5s ease;
+      }
+
+      .ui-section-hero {
+        padding: 50px 20px;
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+      }
+
+      .ui-component-button-primary {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
+
+      .ui-component-button-primary:hover {
+        background-color: #83650a;
+      }
+
+      .ui-text-note small {
+        color: #ddd;
+      }
+
+      footer {
+        background-color: var(--secondary-color);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      footer p,
+      footer a {
+        color: #aeaeae;
+      }
+
+      body {
+        background: linear-gradient(135deg, #0f172a, #302b63);
+        background-size: cover;
+        background-position: center;
+        /* font-family: 'Inter', sans-serif; */
+        margin: 0;
+        padding: 0;
+      }
+
+      .landing-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        color: white;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.5);
+        /* Optional: to make the header stand out */
+        padding: 1em;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .ui-section-header--logo svg {
+        width: 58px;
+        height: 58px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .ui-section-hero {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.5);
+        /* Optional: to make the hero section stand out */
+        border-radius: 10px;
+      }
+
+      .ui-component-button-primary {
+        background-color: #fec302;
+        color: #302b63;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .ui-component-button-primary:hover {
+        background-color: #83650a;
+      }
+
+      .ui-text-note small {
+        color: #ddd;
+      }
+
+      footer {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      footer p,
+      footer a {
+        color: #aeaeae;
+      }
+
+      @media (max-width: 768px) {
+        .circle {
+          display: none;
+        }
+
+        .circle2 {
+          display: none;
+        }
+      }
+</style>
+
+<div class="background"></div>
+    <header role="banner" class="ui-section-header" style="height: 100%">
+      <div class="ui-layout-container">
+        <div class="ui-section-header__layout ui-layout-flex">
+          <!-- LOGO -->
+          <a
+            href="#"
+            role="link"
+            aria-label="#"
+            class="ui-section-header--logo"
+          >
+            <svg
+              version="1.1"
+              viewBox="0 0 2048 1365"
+              width="58"
+              height="58"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                transform="translate(0)"
+                d="m0 0h2048v1365h-2048z"
+                fill="#FEC302"
+              />
+              <path
+                transform="translate(831,400)"
+                d="m0 0h9l13 2 13 4 14 7 11 9 5 4 9 12 9 16 19 39 13 28 9 19 8 16 22 45 13 28 10 21 8 16 25 51 13 28 8 16 14 29 12 26 7 11 7 6 10 4h15l13-5 10-6h3l-2 6-8 16-11 23-26 52-9 12-11 11-10 7-17 8-20 4h-12l-20-4-16-7-14-10-10-10-9-14-21-43-12-26-8-16-18-37-11-23-17-35-12-25-14-29-11-23-16-33-14-29-13-28-8-16-9-17-9-8-9-4-5-1h-10l-11 4-12 8-3-1 2-7 10-19 10-21 25-50 9-12 11-11 11-7 10-5 13-4z"
+                fill="#83650A"
+              />
+              <path
+                transform="translate(1159,400)"
+                d="m0 0h10l16 3 15 6 11 7 13 11 9 12 12 23 16 33 11 23 16 33 12 26 8 16 20 41 11 23 13 27 11 23 17 35 14 29 12 26 8 16 6 11 5 6 9 5 5 2h16l12-5 9-6 4 1-9 19-8 16-12 25-18 36-8 11-8 9-11 8-16 8-12 4-13 2-18-1-16-4-16-8-13-10-7-7-10-15-33-68-24-51-8-16-19-39-11-23-14-29-11-23-14-29-17-35-12-26-8-16-9-19-7-9v-2l-4-2-11-5-5-1h-9l-12 4-11 7-4 1 1-5 30-60 11-23 7-13 8-10 9-9 10-7 15-7 15-4z"
+                fill="#83650A"
+              />
+              <path
+                transform="translate(646,716)"
+                d="m0 0h13l13 4 11 8 7 10 20 41 13 28 10 19 7 6 8 4 4 1h15l12-5 11-7h2l-1 6-12 23-14 29-8 17-10 19-9 14-4 5-8 7-11 8-12 6-18 5-9 1h-9l-13-2-16-5-14-8-11-9-9-10-8-13-17-35-10-22-2-8v-10l4-13 10-22 9-17 11-23 10-21 9-16 7-7 12-6z"
+                fill="#83650A"
+              />
+            </svg>
+          </a>
+          <!-- HAMBURGER -->
+          <input type="checkbox" id="ui-section-header--menu-id" />
+          <label
+            for="ui-section-header--menu-id"
+            class="ui-section-header--menu-icon"
+          ></label>
+          <!-- MENU -->
+          <nav role="navigation" class="ui-section-header--nav ui-layout-flex">
+            <a
+              href="{{ url_for('main.index') }}"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Home</a
+            >
+            <a
+              href="{{ url_for('main.index') }}"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Features</a
+            >
+            {% if current_user.is_authenticated %}
+            <a
+              href=""
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Preferences</a
+            >
+            {% else %} {% endif %}
+            <a
+              href="{{ url_for('main.contact') }}"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >Contact</a
+            >
+            <a
+              href="{{ url_for('main.about') }}"
+              role="link"
+              aria-label="#"
+              class="ui-section-header--nav-link"
+              >About</a
+            >
+            {% if current_user.is_authenticated %}
+            <a
+              style="border-left: 1px solid white; margin-bottom: 1%"
+              href="{{ url_for('main.user_profile') }}"
+            >
+              <img
+                src="{{ url_for('static', filename='assets/images/jpg/profile_pic2.jpg') }}"
+                alt="#"
+                height="50px"
+                width="50px"
+                style="border-radius: 50%"
+              />
+              <p class="ui-section-testimonial--author">
+                <strong style="color: #fec302; font-size: 20px"
+                  >{{ current_user.first_name }} {{ current_user.last_name
+                  }}</strong
+                ><br />
+              </p>
+            </a>
+            {% else %} {% endif %}
+          </nav>
+        </div>
+      </div>
+      <!-- Animated Circles -->
+      <div class="animated-circles">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+      </div>
+    </header>

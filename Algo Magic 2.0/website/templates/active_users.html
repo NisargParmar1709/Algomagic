@@ -1,0 +1,17 @@
+<!-- templates/active_users.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="(5)">
+    <title>Active Users</title>
+</head>
+<body>
+    <h1>Active Users</h1>
+    <ul>
+        {% for user in active_users %}
+            <li>{{ user.name }} ({{ user.email }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

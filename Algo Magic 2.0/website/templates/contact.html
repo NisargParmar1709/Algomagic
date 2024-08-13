@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- META -->
+  <meta name="description" content="AlgoMagic allows you to customize your YouTube feed based on your preferences." />
+  <!-- LINK -->
+  <link rel="me" href="#" />
+  <link rel="canonical" href="#" />
+  <link rel="icon" type="image/png" href="#" sizes="48x48" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="192x192"
+    href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}" />
+  <link rel="icon" type="image/png" sizes="512x512"
+    href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}" />
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}" />
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}" />
+  <!-- TITLE -->
+  <title>Contact Us - AlgoMagic</title>
+  <!-- CONTACT PAGE SPECIFIC CSS -->
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/contect.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}" />
+</head>
+
+<body>
+  <!-- Include Navbar from base.html -->
+  {% include '_navbar.html' %}
+
+  <main>
+    <section class="contact-info">
+      <h2>Let's Connect!</h2>
+      <p>Your thoughts matter to us. Whether you have a question, a suggestion, or just want to say hello, we’re all
+        ears!</p>
+      <ul>
+        <li>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:algomagic17@gmail.com">algomagic17@gmail.com</a>
+        </li>
+        <li>
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/nisarg-parmar-0a714b27a/">Connect with linked in</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact-form">
+      <h2>Drop Us a Line</h2>
+      <p>Have something on your mind? We’re here to listen. Just fill out the form below, and we'll get back to you as
+        soon as possible!</p>
+      <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+
+  <!-- Include Footer from base.html -->
+  {% include '_footer.html' %}
+</body>
+
+</html>

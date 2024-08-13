@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta
+      name="description"
+      content="AlgoMagic allows you to customize your YouTube feed based on your preferences."
+    />
+    <!-- SPEED -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- LINK -->
+    <link rel="me" href="#" />
+    <link rel="canonical" href="#" />
+    <link rel="icon" type="image/png" href="#" sizes="48x48" />
+    <!-- PERFORMANCE -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <link rel="preload" as="style" href="style.css" />
+    <!-- TITLE -->
+    <title>AlgoMagic: Customize Your YouTube Feed</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='assets/css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}"
+    />
+
+    <style>
+        
+    </style>
+
+
+  </head>
+
+  <body>
+    {% include "_navbar.html" %}
+    
+    <main role="main">{% block content %}{% endblock %}</main>
+
+    {% include "_footer.html" %}
+  </body>
+</html>

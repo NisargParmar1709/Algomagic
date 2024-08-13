@@ -1,0 +1,265 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Technology",
+            "keywords": [
+                "tech products",
+                "gadgets",
+                "reviews",
+                "unbox",
+                "hardware comparisons",
+                "tech news",
+                "industry insights",
+                "science experiments",
+                "life hacks",
+                "product testing"
+            ],
+            "favoriteChannels": [
+                "Unbox Therapy",
+                "Marques Brownlee",
+                "MrMobile [Michael Fischer]",
+                "Linus Tech Tips ",
+                "Austin Evans",
+                "The Verge",
+                "Mrwhosetheboss",
+                "Technical Guruji",
+                "CrazyRussianHacker",
+                "Jonathan Morrison"
+            ],
+            "contentLanguage": [
+                "English",
+                "Hindi"
+            ],
+            "contentType": [
+                "tutorials",
+                "reviews"
+            ],
+            "avgVideoLen": [
+                13,
+                14,
+                9,
+                20
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Education",
+            "keywords": [
+                "visual arts",
+                "mathematics",
+                "entertaining animations",
+                "history",
+                "science",
+                "literature",
+                "organic chemistry",
+                "computing",
+                "economics",
+                " psychology",
+                "physics",
+                "biology",
+                "geography",
+                "wildlife",
+                "culture",
+                "environmental science",
+                "human body",
+                "mysteries of the mind",
+                "space exploration",
+                "practical application of scientific principles",
+                "scientific principles",
+                "DIY projects",
+                "real-world examples"
+            ],
+            "favoriteChannels": [
+                "Ted-Ed",
+                "Crash Course",
+                "Amberstudent.com",
+                "Khan Academy",
+                "AsapSCIENCE",
+                "National Geographic",
+                "Life Noggin",
+                "Applied Science",
+                "Veritasium",
+                "HowStuffWorks"
+            ],
+            "contentLanguage": [
+                "English",
+                "Hindi"
+            ],
+            "contentType": [
+                "video"
+            ],
+            "avgVideoLen": [
+                17,
+                16,
+                13,
+                45,
+                21
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Entertainment",
+            "keywords": [
+                "Movies",
+                "TV Shows",
+                "Celebrities",
+                "Awards",
+                "Red Carpet"
+            ],
+            "favoriteChannels": [
+                "Netflix",
+                "Hulu",
+                "TMZ",
+                "E! News",
+                "Entertainment Tonight",
+                "People Magazine",
+                "Variety",
+                "The Hollywood Reporter",
+                "Access Hollywood",
+                "Just Jared",
+                "Bollywood Hungama",
+                "Zoom TV",
+                "India Today",
+                "Aaj Tak",
+                "Zee News"
+            ],
+            "contentLanguage": [
+                "English",
+                "Hindi"
+            ],
+            "contentType": [
+                "Movie Reviews",
+                "Celebrity Interviews",
+                "TV Show Recaps"
+            ],
+            "avgVideoLen": [
+                10,
+                30
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Music",
+            "keywords": [
+                "New Releases",
+                "Music Videos",
+                "Artist Interviews",
+                "Concerts",
+                "Festivals"
+            ],
+            "favoriteChannels": [
+                "Vevo",
+                "MTV",
+                "Billboard",
+                "Rolling Stone",
+                "Pitchfork",
+                "NME",
+                "The Fader",
+                "Complex",
+                "Genius",
+                "iHeartRadio",
+                "Sony Music India",
+                "T-Series",
+                "Zee Music Company",
+                "Tips Official",
+                "Gaana"
+            ],
+            "contentLanguage": [
+                "English",
+                "Hindi"
+            ],
+            "contentType": [
+                "Music Videos",
+                "Live Performances",
+                "Artist Interviews"
+            ],
+            "avgVideoLen": [
+                3,
+                6
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Gaming",
+            "keywords": [
+                "Walkthroughs",
+                "Reviews",
+                "Esports",
+                "Gaming News",
+                "New Releases"
+            ],
+            "favoriteChannels": [
+                "Twitch",
+                "IGN",
+                "GameSpot",
+                "Polygon",
+                "Kotaku",
+                "Game Informer",
+                "Electronic Gaming Monthly",
+                "Destructoid",
+                "Giant Bomb",
+                "PC Gamer",
+                "Indian Gaming Community",
+                "Gaming Central",
+                "GameOn",
+                "The Gaming Guruji",
+                "Gamers Unite"
+            ],
+            "contentLanguage": [
+                "English",
+                "Hindi"
+            ],
+            "contentType": [
+                "Game Reviews",
+                "Walkthroughs",
+                "Esports Highlights"
+            ],
+            "avgVideoLen": [
+                10,
+                60
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Sports",
+            "keywords": [
+                "Highlights",
+                "Analysis",
+                "News",
+                "Scores",
+                "Stats"
+            ],
+            "favoriteChannels": [
+                "ESPN",
+                "Fox Sports",
+                "NFL Network",
+                "NBA TV",
+                "MLB Network",
+                "NHL Network",
+                "Sports Illustrated",
+                "CBS Sports",
+                "NBC Sports",
+                "Yahoo! Sports",
+                "Star Sports",
+                "Sony ESPN",
+                "DD Sports",
+                "India Today Sports",
+                "Aaj Tak Sports"
+            ],
+            "contentLanguage": [
+                "English",
+                "Hindi"
+            ],
+            "contentType": [
+                "Game Highlights",
+                "Sports News",
+                "Analysis"
+            ],
+            "avgVideoLen": [
+                5,
+                30
+            ]
+        }
+    ]
+}

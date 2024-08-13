@@ -1,0 +1,253 @@
+.about-section {
+    padding: 2em;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: aboutAnimation 2s ease-in-out;
+    background-image: linear-gradient(to bottom, #fff, #f7f7f7);
+}
+
+@keyframes aboutAnimation {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.about-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.about-subtitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.about-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.mission-section {
+    background-color: #f2f2f2;
+    padding: 2em;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #337ab7;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.section-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.what-we-do-section {
+    background-color: #fff;
+    padding: 2em;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, #fff, #f7f7f7);
+}
+
+.feature-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.feature-list li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.feature-icon {
+    font-size: 36px;
+    color: #337ab7;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.feature-icon:hover {
+    color: #23527c;
+    transform: scale(1.1);
+}
+
+.feature-content {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.benefits-section {
+    background-color: #f2f2f2;
+    padding: 2em;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #337ab7;
+}
+
+.benefit-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.benefit-list li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.benefit-icon {
+    font-size: 36px;
+    color: #337ab7;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.benefit-icon:hover {
+    color: #23527c;
+    transform: scale(1.1);
+}
+
+.benefit-content {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.cta-section {
+    background-color: #337ab7;
+    padding: 2em;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn {
+    background-color: #fff;
+    color: #337ab7;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+    background-color: #ccc;
+    color: #337ab7;
+    transform: scale(1.1);
+}
+
+.cta-btn:active {
+    background-color: #337ab7;
+    color: #fff;
+    transform: scale(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 1em;
+    }
+
+    .mission-section {
+        padding: 1em;
+    }
+
+    .what-we-do-section {
+        padding: 1em;
+    }
+
+    .benefits-section {
+        padding: 1em;
+    }
+
+    .cta-section {
+        padding: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-title {
+        font-size: 24px;
+    }
+
+    .about-subtitle {
+        font-size: 18px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .section-description {
+        font-size: 16px;
+    }
+
+    .feature-icon {
+        font-size: 24px;
+    }
+
+    .benefit-icon {
+        font-size: 24px;
+    }
+
+    .cta-btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}

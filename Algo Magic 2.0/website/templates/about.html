@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META -->
+    <meta name="description" content="AlgoMagic allows you to customize your YouTube feed based on your preferences." />
+    <!-- LINK -->
+    <link rel="me" href="#" />
+    <link rel="canonical" href="#" />
+    <link rel="icon" type="image/png" href="#" sizes="48x48" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}" />
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}" />
+    <!-- TITLE -->
+    <title>Contact Us - AlgoMagic</title>
+    <!-- CONTACT PAGE SPECIFIC CSS -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/about.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}" />
+</head>
+
+<body>
+    <!-- Include Navbar from base.html -->
+    {% include '_navbar.html' %}
+
+    <main>
+        <!-- About Section -->
+        <section class="about-section">
+            <h1 class="about-title">Discover AlgoMagic</h1>
+            <p class="about-subtitle">Welcome to a New Era of Personalized Content</p>
+            <p class="about-description">
+                In today's fast-paced world, finding meaningful content amidst the sea of distractions can feel like
+                searching for a needle in a haystack. That's where AlgoMagic steps in. Our groundbreaking app uses
+                state-of-the-art algorithms to transform your YouTube feed into a customized, productive space that
+                aligns perfectly with your passions and goals.
+            </p>
+
+            <!-- Our Mission Section -->
+            <div class="mission-section">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-description">
+                    At AlgoMagic, our mission is to empower you to make the most of your time online. By curating
+                    content that resonates with your unique preferences, we aim to turn your YouTube experience into
+                    something not only entertaining but also enriching and insightful. We believe that the right content
+                    can inspire, educate, and elevate your everyday life.
+                </p>
+            </div>
+
+            <!-- What We Do Section -->
+            <div class="what-we-do-section">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-description">
+                    At AlgoMagic, we combine cutting-edge technology with a deep understanding of your content
+                    preferences to bring you a YouTube experience like no other. Here's how we make magic happen:
+                </p>
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Tailored to You</strong>: Share your favorite keywords, select your top categories,
+                            and tell us the type of content you love. AlgoMagic takes it from there, crafting a
+                            personalized YouTube feed just for you.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Smart Automation</strong>: Our app employs advanced web scraping and automation to
+                            seamlessly interact with your YouTube account, curating and presenting content that matches
+                            your specific criteria.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="feature-content">
+                            <strong>Curated for Quality</strong>: Enjoy a handpicked selection of video recommendations
+                            that keep you informed and inspired. Our intelligent system learns from your feedback to
+                            continuously refine and enhance your viewing experience.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="benefits-section">
+                <h2 class="section-title">Why Choose AlgoMagic?</h2>
+                <p class="section-description">
+                    With AlgoMagic, you unlock a wealth of benefits designed to enhance your YouTube experience:
+                </p>
+                <ul class="benefit-list">
+                    <li>
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <strong>Save Time</strong>: Skip the endless scrolling. AlgoMagic delivers the content that
+                            matters most to you, so you can spend more time watching and less time searching.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <strong>Boost Productivity</strong>: Focus on your goals with a feed tailored to your
+                            interests. AlgoMagic helps you stay on track, turning your YouTube time into an opportunity
+                            for growth and achievement.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <strong>Enjoy a Personalized Experience</strong>: AlgoMagic transforms your YouTube feed
+                            into a curated space that brings you joy, satisfaction, and valuable insights every time you
+                            log in.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Call to Action Section -->
+            <div class="cta-section">
+                <h2 class="section-title" style="color: blue;">Start Your AlgoMagic Journey</h2>
+                <p class="section-description">
+                    Ready to experience the future of personalized content? Sign up for AlgoMagic today and discover a
+                    world where your YouTube feed is truly your own!
+                </p>
+                <button class="cta-btn">Sign Up Now</button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Include Footer from base.html -->
+    {% include '_footer.html' %}
+
+</body>
+
+</html>

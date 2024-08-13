@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/login.css') }}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}" />
+    <link rel="icon" type="image/png" sizes="512x512" href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}" />
+    <title>Log in - AlgoMAGIC</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="left">
+            <div class="welcome">welcome !</div>
+            <a href="/"><button class="skip">Back to Main page ?</button></a>
+        </div>
+        <div class="right">
+            <div class="login-form">
+                <form action="{{ url_for('auth.login') }}" method="post">
+                <div class="title">
+                    <div class="login">Log in</div>
+                    <div class="text">Hope you go got it.!</div>
+                </div>
+                <input type="text" placeholder="Username" class="username" name="email" required>
+                <input type="password" placeholder="Password" class="password" name="password"required>
+                <div class="remember">
+                </div>
+                <input type="submit" class="login-btn" value="Login">
+                <a href="/forgot"><div class="forgot">Forgot password?</div></a>
+                <div class="or-separator">
+                    <hr>    
+                    <span>Or</span>
+                    <hr>
+                </div>
+                <div class="social-buttons">
+                </div>
+                <div class="signup">Don't have an account ? <span style="color: blue; text-decoration: underline;"><a href="signup">Signup</a></span></div>
+
+                <div class="footer">
+                    <div class="terms">Terms & Conditions</div>
+                    <div class="support">Support</div>
+                    <div class="care">Customer Care</div>
+                </div>
+                </from>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

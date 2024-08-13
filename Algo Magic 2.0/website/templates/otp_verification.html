@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/otp_verification.css') }}" />
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{url_for('static', filename='assets/images/favicon/android-chrome-192x192.png') }}" />
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="{{url_for('static', filename='/assets/images/favicon/android-chrome-512x512.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{url_for('static', filename='/assets/images/favicon/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{url_for('static', filename='/assets/images/favicon/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{url_for('static', filename='/assets/images/favicon/favicon-32x32.png') }}" />
+    <title>OTP Verification - AlgoMAGIC</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="left">
+            <div class="welcome">Verify OTP</div>
+            <a href="/signup"><button class="skip">Go Back</button></a>
+        </div>
+        <div class="right">
+            <div class="login-form" id="login_form">
+                <form action="{{ url_for('auth.otp_verification') }}" method="POST">
+                    <div class="title">
+                        <div class="login">OTP Verification</div>
+                        <div class="text">Enter the OTP sent to your email</div>
+                        <div style="margin-top:1%;">
+                            <h1><span id="timer" class="timer">00 : 60</span></h1>
+                        </div>
+                    </div>
+                    <div class="otp-input-container">
+                        <input type="text" class="otp-input" id="otp-input-1" maxlength="1" name="first_digit"
+                            required />
+                        <input type="text" class="otp-input" id="otp-input-2" maxlength="1" name="second_digit"
+                            required />
+                        <input type="text" class="otp-input" id="otp-input-3" maxlength="1" name="third_digit"
+                            required />
+                        <input type="text" class="otp-input" id="otp-input-4" maxlength="1" name="fourth_digit"
+                            required />
+                    </div>
+                    <!-- <input type="number" placeholder="Enter OTP" class="otp" id="otpInput" required> -->
+                    <div id="otpError" class="error-message" name = "error-message" style="color : red;"></div>
+                    <input type="submit" class="verify-btn" value="Verify OTP">
+                    <div class="resend" id="resend">Didn't receive OTP? <a href="">Resend</a></div>
+
+                    <div class="footer">
+                        <div class="terms">Terms & Conditions</div>
+                        <div class="support">Support</div>
+                        <div class="care">Customer Care</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the timer element
+        const timerElement = document.getElementById('timer');
+
+        // Set the timer duration in seconds
+        const timerDuration = 60;
+
+        // Create a function to update the timer
+        function updateTimer() {
+            // Get the current time
+            const currentTime = parseInt((timerElement.textContent).replace("00 : ", ""));
+
+            // Decrement the time by 1 second
+            const newTime = currentTime - 1;
+
+            // Update the timer element
+            timerElement.textContent = "00 : " + newTime.toString().padStart(2, '0');
+
+            // If the time is up, stop the timer
+            if (newTime === 0) {
+                clearInterval(timerInterval);
+                updateLoginForm();
+            }
+        }
+
+        // Create a function to update the login form
+        function updateLoginForm() {
+            // Update the login form to show "Time's up! Resend OTP"
+            login_form.innerHTML = `
+                <p>Time's up! Resend OTP ?</p>
+                <a href="/signup"><button class="verify-btn" id="resend-otp-btn">Resend OTP</button></a>
+            `;
+
+            // Add an event listener to the resend OTP button
+            const resendOtpBtn = document.getElementById('resend-otp-btn');
+            resendOtpBtn.addEventListener('click', resendOtp);
+        }
+
+        // Create a timer interval
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        // Start the timer
+        updateTimer();
+
+        const otpInputs = document.querySelectorAll('.otp-input');
+
+        otpInputs.forEach((input, index) => {
+            input.addEventListener('keyup', (e) => {
+                if (e.target.value.length === 1) {
+                    if (index < otpInputs.length - 1) {
+                        otpInputs[index + 1].focus();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
